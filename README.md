@@ -88,3 +88,33 @@ In this section, you will create some data visualization to present the final re
 2. Use `hvplot.table` to create a data table with all the current tradable cryptocurrencies. The table should have the following columns: `"CoinName", "Algorithm", "ProofType", "TotalCoinSupply", "TotalCoinsMined", "Class"`
 
 3. Create a scatter plot using `hvplot.scatter`, to present the clustered data about cryptocurrencies having `x="TotalCoinsMined"` and `y="TotalCoinSupply"` to contrast the number of available coins versus the total number of mined coins. Use the `hover_cols=["CoinName"]` parameter to include the cryptocurrency name on each data point.
+### Optional Challenge
+
+For the challenge section, you have to upload your Jupyter notebook to Amazon SageMaker and deploy it.
+
+The `hvplot` and Plotly Express libraries are not included in the built-in anaconda environments, however you can install external libraries on Amazon SageMaker, there is still not full support for these libraries; so, for this challenge section, you should use the `altair` library instead.
+
+Perform the following tasks:
+
+1. Upload your Jupyter notebook and rename it as `crypto_clustering_sm.ipynb`
+
+2. Select the `conda_python3` environment.
+
+3. Install the `altair` library by running the following code before the initial imports.
+
+  ```python
+!pip install   -U altair
+  ```
+
+4. Use the `altair` scatter plot to create the Elbow Curve.
+
+5. Use the `altair` scatter plot, instead of the 3D-Scatter from Plotly Express, to visualize the clusters. Since this is a 2D-Scatter, use `x="PC 1"` and `y="PC 2"` for the axes, and add the following columns as tool tips: `"CoinName", "Algorithm", "TotalCoinsMined", "TotalCoinSupply"`.
+
+6. Use the `altair` scatter plot to visualize the tradable cryptocurrencies using  `x="TotalCoinsMined"` and `y="TotalCoinSupply"` for the axes.
+
+7. Show the table of current tradable cryptocurrencies using the `display()` command.
+
+8. Remove all `hvplot` and Plotly Express references from your code.
+
+
+
